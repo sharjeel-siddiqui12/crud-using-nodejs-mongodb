@@ -19,11 +19,11 @@ This project is a CRUD (Create, Read, Update, Delete) application built using HT
 ## Installation
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/your-repo-name.git
+    git clone https://github.com/sharjeel-siddiqui12/crud-using-nodejs-mongodb.git
     ```
 2. Navigate to the project directory:
     ```bash
-    cd your-repo-name
+    cd crud-using-nodejs-mongodb
     ```
 3. Install the dependencies:
     ```bash
@@ -35,7 +35,7 @@ This project is a CRUD (Create, Read, Update, Delete) application built using HT
     ```
 5. Start the application:
     ```bash
-    npm start
+    npm run dev
     ```
 
 ## Usage
