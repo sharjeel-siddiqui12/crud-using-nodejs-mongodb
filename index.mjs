@@ -3,6 +3,10 @@ import express from 'express';
 const app = express()
 const port = process.env.PORT || 5001;
 
+app.get('/', (req, res) => {
+    console.log(`${req.ip} is asking for hello`)
+    res.send('Here is some hello for you')
+})
 app.get('/water', (req, res) => {
     console.log(`${req.ip} is asking for water`)
     res.send('Here is some water for you')
