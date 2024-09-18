@@ -179,6 +179,52 @@ app.delete('/product/:id', async (req, res) => {
     }
 });
 
+app.put('/product/:id', async (req, res) => {
+    const id = req.params.id;
+    const body = req.body;
+
+    if (
+        !body.name ||
+        !body.price ||
+        !body.category ||
+        !body.description
+    ) {
+        res.status(400).send(`Required parameter missing. Example request body:
+        {
+            "name": "value",
+            "price": "value",
+            "category": "value",
+            "description": "value"
+        }`);
+        return;
+    }
+
+    try {
+        const data = await productModel.findByIdAndUpdate(id,
+            {
+                name: body.name,
+                price: body.price,
+                category: body.category,
+                description: body.description
+            },
+            { new: true }
+        ).exec();
+
+        console.log('Updated:', data);
+        res.send({
+            message: "Product is updated successfully",
+            data: data
+        });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).send({
+            message: "Server error"
+        });
+    }
+});
+
+
 app.get('/weather', (req, res) => {
     console.log(`${req.ip} is asking for weather`);
 
