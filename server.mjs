@@ -2,6 +2,7 @@ import express from 'express';
 import path from 'path';
 import cors from 'cors';
 import mongoose from 'mongoose';
+import {dbUri} from './config.js';
 
 let productSchema = new mongoose.Schema({
     name: { type: String, required: true },
@@ -245,8 +246,9 @@ app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
 });
 
-const dbUri = 'mongodb+srv://user123:user123@cluster0.bbbw2.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+// const dbUri = 'mongodb+srv://user123:user123@cluster0.bbbw2.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 mongoose.connect(dbUri);
+
 
 // MongoDB connected/disconnected events
 mongoose.connection.on('connected', () => {
