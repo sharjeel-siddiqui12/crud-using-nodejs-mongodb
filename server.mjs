@@ -252,7 +252,7 @@ app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
 });
 
-// const dbUri = 'mongodb+srv://user123:user123@cluster0.bbbw2.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+
 mongoose.connect(dbUri);
 
 
