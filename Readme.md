@@ -1,6 +1,5 @@
 # Getting Started with Node.js CRUD Application
-
-This project is a CRUD (Create, Read, Update, Delete) application built using HTML, CSS, JavaScript, Node.js, and MongoDB. It allows users to add, delete, update, and view items.
+This project is a CRUD (Create, Read, Update, Delete) application built using React.js, Node.js, and MongoDB. It allows users to add, delete, update, and view items.
 
 ## Table of Contents
 - [Features](#features)
@@ -39,11 +38,11 @@ This project is a CRUD (Create, Read, Update, Delete) application built using HT
     ```
 
 ## Usage
-1. Open your browser and navigate to `http://localhost:3000`.
+1. Open your browser and navigate to `http://localhost:5173`.
 2. Use the interface to add, view, update, and delete items.
 
 ## Technologies Used
-- **Frontend:** HTML, CSS, JavaScript
+- **Frontend:** React.js
 - **Backend:** Node.js, Express.js
 - **Database:** MongoDB
 
