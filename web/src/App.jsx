@@ -97,39 +97,79 @@ const App = () => {
   };
 
   return (
-    <div>
-      <h1>CRUD APPLICATION</h1>
-      <form onSubmit={addProduct}>
+    <div className="bg-gray-100 min-h-screen py-10">
+      <h1 className="text-center text-indigo-600 text-4xl font-bold mb-8">CRUD APPLICATION</h1>
+      <form onSubmit={addProduct} className="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg space-y-4">
         <div>
-          <label>Name:</label>
-          <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+          <label className="block text-sm font-medium text-gray-700">Name:</label>
+          <input 
+            type="text" 
+            value={name} 
+            onChange={(e) => setName(e.target.value)} 
+            className="w-full px-4 py-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          />
         </div>
         <div>
-          <label>Price:</label>
-          <input type="number" value={price} onChange={(e) => setPrice(e.target.value)} />
+          <label className="block text-sm font-medium text-gray-700">Price:</label>
+          <input 
+            type="number" 
+            value={price} 
+            onChange={(e) => setPrice(e.target.value)} 
+            className="w-full px-4 py-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          />
         </div>
         <div>
-          <label>Category:</label>
-          <input type="text" value={category} onChange={(e) => setCategory(e.target.value)} />
+          <label className="block text-sm font-medium text-gray-700">Category:</label>
+          <input 
+            type="text" 
+            value={category} 
+            onChange={(e) => setCategory(e.target.value)} 
+            className="w-full px-4 py-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          />
         </div>
         <div>
-          <label>Description:</label>
-          <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
+          <label className="block text-sm font-medium text-gray-700">Description:</label>
+          <input 
+            type="text" 
+            value={description} 
+            onChange={(e) => setDescription(e.target.value)} 
+            className="w-full px-4 py-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          />
         </div>
-        <button type="submit">{currentProductId ? 'Update Product' : 'Add Product'}</button>
+        <button 
+          type="submit" 
+          className="w-full bg-indigo-600 text-white py-2 px-4 rounded-lg mt-4 hover:bg-indigo-500 transition"
+        >
+          {currentProductId ? 'Update Product' : 'Add Product'}
+        </button>
       </form>
 
-      <div id="result">{resultMessage}</div>
+      <div id="result" className="text-center text-green-500 mt-4">{resultMessage}</div>
 
-      <div className="productList">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 max-w-6xl mx-auto">
         {products.map(product => (
-          <div key={product._id}>
-            <h1>{product.name}</h1>
-            <p>{product.price}</p>
-            <p>{product.category}</p>
-            <p>{product.description}</p>
-            <button className='btn' onClick={() => deleteProduct(product._id)}>Delete</button>
-            <button className='btn' onClick={() => editProduct(product._id)}>Edit</button>
+          <div 
+            key={product._id} 
+            className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-transform transform hover:-translate-y-2"
+          >
+            <h1 className="text-xl font-semibold text-gray-800 mb-2">{product.name}</h1>
+            <p className="text-gray-600">Price: ${product.price}</p>
+            <p className="text-gray-600">Category: {product.category}</p>
+            <p className="text-gray-600">Description: {product.description}</p>
+            <div className="mt-4">
+              <button 
+                className="bg-red-500 text-white py-2 px-4 rounded-lg mr-2 hover:bg-red-400 transition" 
+                onClick={() => deleteProduct(product._id)}
+              >
+                Delete
+              </button>
+              <button 
+                className="bg-yellow-500 text-white py-2 px-4 rounded-lg hover:bg-yellow-400 transition" 
+                onClick={() => editProduct(product._id)}
+              >
+                Edit
+              </button>
+            </div>
           </div>
         ))}
       </div>
