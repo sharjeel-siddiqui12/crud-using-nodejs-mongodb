@@ -242,11 +242,16 @@ app.get('/weather', (req, res) => {
 
 const __dirname = path.resolve();
 
-app.get('/', express.static(path.join(__dirname, "/web/dist/index.html")));
-app.use('/', express.static(path.join(__dirname, "/web/dist")));
-app.use('/', express.static(path.join(__dirname, "/web")));
+// app.get('/', express.static(path.join(__dirname, "/web/dist/index.html")));
+// app.use('/', express.static(path.join(__dirname, "/web/dist")));
+// app.use('/', express.static(path.join(__dirname, "/web")));
 
+app.use(express.static('web/build'));
 
+// Handle any other routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'web/build', 'index.html'));
+});
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
