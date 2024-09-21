@@ -18,11 +18,11 @@ This project is a CRUD (Create, Read, Update, Delete) application built using Re
 ## Installation
 1. Clone the repository:
     ```bash
-    git clone https://github.com/sharjeel-siddiqui12/crud-using-nodejs-mongodb.git
+    git clone https://github.com/sharjeel-siddiqui12/crud-using-react-nodejs-mongodb.git
     ```
 2. Navigate to the project directory:
     ```bash
-    cd crud-using-nodejs-mongodb
+    cd crud-using-react-nodejs-mongodb
     ```
 3. Install the dependencies:
     ```bash
