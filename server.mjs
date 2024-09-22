@@ -2,7 +2,7 @@ import express from 'express';
 import path from 'path';
 import cors from 'cors';
 import mongoose from 'mongoose';
-import {dbUri} from './config.js';
+import {dbUri} from './mongodbConfig/config.js';
 
 let productSchema = new mongoose.Schema({
     name: { type: String, required: true },
